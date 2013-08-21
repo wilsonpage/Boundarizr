@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Boundarizr sample</title>
+
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+    }
+
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+
+    #innercontainer {
+      left: 20px;
+      top: 40px;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border: 1px solid red;
+      position: absolute;
+    }
+
+    #box {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: red
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="innercontainer">
+      <div id="box"></div>
+    </div>
+  </div>
+
+  <script src="../js/boundarizr.js"></script>
+  <script>
+    var box = document.getElementById('box');
+    var time = 0;
+
+    function update() {
+
+
+      box.style.top = (100 + Math.sin(time) * 40) + 'px';
+      box.style.left = (100 + Math.cos(time) * 40) + 'px';
+
+      time += 0.01;
+      webkitRequestAnimationFrame(update);
+    }
+
+    webkitRequestAnimationFrame(update);
+
+    // Show boundaries
+    Boundarizr.testCurrentDocument();
+  </script>
+</body>
+</html>
