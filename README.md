@@ -4,7 +4,7 @@
 
 Layout boundaries are able to limit the root and scope of Chrome's layout
 operations. This is a small library that highlights elements that can act as
-potential layout boundaries in your page's DOM.
+potential layout boundaries in your page's DOM. For more info check out [Wilson Page's intro to Layout Boundaries](http://wilsonpage.co.uk/introducing-layout-boundaries/)
 
 To be a layout boundary, the element must satisfy the following constraints:
 
