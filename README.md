@@ -1,5 +1,7 @@
 # Boundarizr
 
+** Please note: this is a beta, any feedback is welcome! **
+
 Layout boundaries are able to limit the root and scope of Chrome's layout
 operations. This is a small library that highlights elements that can act as
 potential layout boundaries in your page's DOM.
