@@ -8,6 +8,9 @@ To be a layout boundary, the element must satisfy the following constraints:
 
 * The element is an SVG root (`<svg>`).
 * The element is a text or search `<input>` field.
+
+or:
+
 * The element does not have a percentage height value.
 * The element does not have an implicit or `auto` height value.
 * The element does not have an implicit or `auto` width value.
