@@ -21,6 +21,14 @@
     font: 30px helvetica, sans-serif;
   }
 
+  strong {
+    color: red;
+  }
+
+  .is strong {
+    color: green;
+  }
+
   .box {
     margin-bottom: 10px;
     background: silver;
@@ -53,6 +61,20 @@
   }
 
   .box.six {
+    display: inline-block;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .box.seven {
+    display: inline;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .box.eight {
     height: 100px;
     width: 100%;
     overflow: hidden;
@@ -72,7 +94,9 @@
     </tr>
   </table>
   <div class="box five">The width of this box is undefined (width: auto), therefore <strong>does not</strong> act as a layout boundary.</div>
-  <div class="box six">This box has a height, width and overflow set. This box <strong>does</strong> act as a layout boundary! :)</div>
+  <div class="box six">This box is an inline-block element, therefore <strong>does not</strong> act as a layout boundary.</div>
+  <div class="box seven">This box is an inline element, therefore <strong>does not</strong> act as a layout boundary.</div>
+  <div class="box eight is">This box has a height, width and overflow set. This box <strong>does</strong> act as a layout boundary! :)</div>
   <script type="text/javascript" src="../js/boundarizr.js"></script>
   <script>
     Boundarizr.testCurrentDocument();
