@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FastDom: Aspect Ratio Example</title>
+<style>
+
+  /**
+   * Lame Reset
+   */
+
+  * {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+  }
+
+  body {
+    padding: 10px;
+    padding-top: 36px;
+    font: 30px helvetica, sans-serif;
+  }
+
+  .box {
+    margin-bottom: 10px;
+    background: silver;
+  }
+
+  .box.one {
+    width: 100%;
+    height: 100px;
+  }
+
+  .box.two {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .box.three {
+    height: 100px;
+    overflow: hidden;
+  }
+
+  .box.four {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .box.five {
+    height: 100px;
+    overflow: hidden;
+  }
+
+  .box.six {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+</style>
+</head>
+<body>
+  <div class="box one">This box does not have overflow: [scroll | hidden | auto], therefore <strong>does not</strong> act as a layout boundary.</div>
+  <div class="box two">The contents of this box are dictating its height (height: auto), therefore this box <strong>does not</strong> act as a layout boundary.</div>
+  <div class="box three">The width of this box is undefined (width: auto), therefore <strong>does not</strong> act as a layout boundary.</div>
+  <table>
+    <tr>
+      <td>
+        <div class="box four">This box is a descendant of a &lt;table&gt; element, therefore <strong>does not</strong> act as a layout boundary.</div>
+      </td>
+    </tr>
+  </table>
+  <div class="box five">The width of this box is undefined (width: auto), therefore <strong>does not</strong> act as a layout boundary.</div>
+  <div class="box six">This box has a height, width and overflow set. This box <strong>does</strong> act as a layout boundary! :)</div>
+  <script type="text/javascript" src="../js/boundarizr.js"></script>
+  <script>
+    Boundarizr.testCurrentDocument();
+  </script>
+</body>
+</html>
